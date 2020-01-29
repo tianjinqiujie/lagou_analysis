@@ -3,7 +3,9 @@ import re
 import time
 import json
 import requests
-from lagou_spider.handle_insert_data import lagou_mysql
+from lagou_spider.handle_insert_data import lagou_mysql,KD
+
+
 class HandleLaGou(object):
     def __init__(self):
         # 使用session保存cookies信息
@@ -36,7 +38,7 @@ class HandleLaGou(object):
             for i in range(1,int(total_page)+1):
                 data = {
                     "pn":i,
-                    "kd":"python"
+                    "kd":KD
                 }
                 page_url = "https://www.lagou.com/jobs/positionAjax.json?px=default&city=%s&needAddtionalResult=false"%city
                 referer_url = "https://www.lagou.com/jobs/list_python?&px=default&city=%s"%city

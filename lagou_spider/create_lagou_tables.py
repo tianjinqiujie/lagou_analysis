@@ -53,6 +53,8 @@ class Lagoutables(Base):
     salary = Column(String(length=20),nullable=False)
     #抓取日期
     crawl_date = Column(String(length=20),nullable=False)
+    # 标签
+    tag = Column(String(length=20),nullable=False)
 
 
 if __name__ == '__main__':
